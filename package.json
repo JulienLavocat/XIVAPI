@@ -9,9 +9,12 @@
     "author": "Julien Lavocat",
     "license": "ISC",
     "dependencies": {
-        "@types/node": "^13.13.1",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
-        "xivapi-js": "^0.3.0"
+        "node-fetch": "^2.6.0"
+    },
+    "devDependencies": {
+        "@types/node": "^13.13.1",
+        "@types/node-fetch": "^2.5.6"
     }
 }

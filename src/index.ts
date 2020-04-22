@@ -1,7 +1,8 @@
-import {Character} from "./structures/character";
+import {XIVAPI} from "./ff14";
+import * as dotenv from "dotenv";
+dotenv.config();
 
-const api = require("./api");
-
+const api = new XIVAPI(process.env.FFIV_API_KEY + "");
 const CHARACTER_ID = 29720582;
 
 start();
@@ -9,9 +10,10 @@ start();
 async function start() {
 
 	try {
-		const res = await api.character.get(CHARACTER_ID).then((r: any) => r.Character);
 
-		console.log(new Character(res));
+		//const character = await api.character.get(CHARACTER_ID);
+
+		console.log(await api.character.search("Piigo", {server: "Odin"}));
 
 	} catch (error) {
 		console.error(error);
