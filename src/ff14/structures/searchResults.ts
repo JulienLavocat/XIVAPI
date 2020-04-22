@@ -42,7 +42,7 @@ export class SearchResults<T> {
 		this.resultsPerPage = pagination.ResultsPerPage;
 		this.resultsTotal = pagination.ResultsTotal;
 
-		this.results = obj.Results.map((e: any) => new this.type(e));
+		this.results = this.type ? obj.Results.map((e: any) => new this.type(e)) : obj.Results;
 	}
 
 }
