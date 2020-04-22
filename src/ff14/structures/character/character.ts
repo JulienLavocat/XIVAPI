@@ -1,5 +1,5 @@
 import { GearSet } from "./gearset";
-import { GrandCompany } from "./GrandCompany";
+import { GrandCompany } from "../GrandCompany";
 
 export class Character {
 

@@ -12,8 +12,12 @@ async function start() {
 	try {
 
 		//const character = await api.character.get(CHARACTER_ID);
+		//console.log(character);
+		//console.log(await api.character.search("Piigo", {server: "Odin"}));
 
-		console.log(await api.character.search("Piigo", {server: "Odin"}));
+		const addons = api.getContent("Addon");
+
+		console.log(await addons.list(10));
 
 	} catch (error) {
 		console.error(error);

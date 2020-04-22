@@ -1,7 +1,7 @@
 import { HTTPUtils } from "./http";
-import { Character } from "../structures/character";
+import { Character } from "../structures/character/character";
 import { SearchResults } from "../structures/searchResults";
-import { CharacterSearch } from "../structures/characterSearch";
+import { CharacterSearch } from "../structures/character/characterSearch";
 
 export class Characters {
 

@@ -1,5 +1,7 @@
 import { Characters } from "./services/character";
 import { HTTPUtils } from "./services/http";
+import { Content } from "./services/content";
+import { transformers } from "./structures/content/transformers";
 
 export class XIVAPI {
 
@@ -14,6 +16,12 @@ export class XIVAPI {
 		this.character = new Characters(this.http);
 	}
 
+	getContent(name: string) {
 
+		const transformer = transformers[name];
+		if(!transformer)
+			return new Content<any>(this.http, name, null);
+		return new Content<typeof transformer>(this.http, name, transformer)
+	}
 
 }
