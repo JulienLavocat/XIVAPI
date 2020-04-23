@@ -40,9 +40,9 @@ const data = character.get(me.id); //Use this to obtain more informations about 
 
 ### Content
 
-Using this interface, you will be able to retieve any informations about every resources accessible from the API. Some resources have transformers, which will transform the raw API results into proper objects, but keep in mind that most of them don't have these transformer, feel free to contribute if you want to add one, or open an issue and I'll add it if I have time.
+Using this interface, you will be able to retieve any informations about every resources accessible from the API. Some resources have transformers, which will transform the raw API results into proper objects, but keep in mind that most of them don't have these transformers, feel free to contribute if you want to add one, or open an issue and I'll add it if I have time.
 
-When listing all available resources for a specific content, you will obtain a `SearchResult<T>` object where T will either be of transformer's type or `any`. Be carefull when using content that has no transformer, as the API will return raw data, so properties will probably be in PascalCase instead of camelCase, etc ...
+When listing all available resources for a specific content, you will obtain a `SearchResult<T>` object where T will either be of transformer's type or `any`. Be carefull when using content that has no transformer, as the client will return raw data, so properties will probably be in PascalCase instead of camelCase, etc ...
 To make sure that the content you want has a transformer, you can use the `hasTransformer` property.
 
 Alternatively, you can add your own transformer by creating a class that will use the data returned from the API and register it in the `transformers` object :
