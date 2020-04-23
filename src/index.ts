@@ -9,7 +9,7 @@ export class XIVAPI {
 
 	private http: HTTPUtils;
 
-	constructor(apiKey: string, serverUrl = "https://xivapi.com", language = "en") {
+	constructor(apiKey: string, language = "en", serverUrl = "https://xivapi.com") {
 		// TODO: Args validation for server and language
 		this.http = new HTTPUtils(apiKey, serverUrl, language);
 
