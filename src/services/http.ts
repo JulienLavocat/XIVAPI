@@ -1,5 +1,5 @@
 import * as Fetch from "node-fetch";
-import { XIVAPIError } from "../apiError";
+import { XIVAPIError } from "../structures/apiError";
 
 const fetch = Fetch.default;
 

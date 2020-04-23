@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/node,visualstudiocode,windows,macOS,linux
-# Edit at https://www.gitignore.io/?templates=node,visualstudiocode,windows,macOS,linux
+# Created by https://www.gitignore.io/api/node,visualstudiocode,windows,macOS,linux,typescript
+# Edit at https://www.gitignore.io/?templates=node,visualstudiocode,windows,macOS,linux,typescript
 
 ### Linux ###
 *~
@@ -151,6 +151,8 @@ dist/
 tmp/
 temp/
 
+#!! ERROR: typescript is undefined. Use list command to see defined gitignore types !!#
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -188,4 +190,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/node,visualstudiocode,windows,macOS,linux
+# End of https://www.gitignore.io/api/node,visualstudiocode,windows,macOS,linux,typescript

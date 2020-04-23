@@ -1,4 +1,4 @@
-import { APIResource } from "../APIResource";
+import { APIResource } from "./APIResource";
 
 export class GuardianDeity extends APIResource {
 

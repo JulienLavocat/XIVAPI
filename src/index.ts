@@ -1,23 +1,27 @@
-import {XIVAPI} from "./ff14";
-import * as dotenv from "dotenv";
-import * as fs from "fs";
-dotenv.config();
+import { Characters } from "./services/character";
+import { HTTPUtils } from "./services/http";
+import { Content } from "./services/content";
+import { transformers } from "./structures/content/transformers";
 
-const api = new XIVAPI(process.env.FFIV_API_KEY + "");
-const CHARACTER_ID = 29720582;
+export class XIVAPI {
 
-start();
+	character: Characters;
 
-async function start() {
+	private http: HTTPUtils;
 
-	try {
+	constructor(apiKey: string, serverUrl = "https://xivapi.com", language = "en") {
+		//TODO: Args validation for server and language
+		this.http = new HTTPUtils(apiKey, serverUrl, language);
 
-		const character = await api.character.get(CHARACTER_ID);
-		fs.writeFileSync("./character.json", JSON.stringify(character, null, 4));
-		//console.log(character);
+		this.character = new Characters(this.http);
+	}
 
-	} catch (error) {
-		console.error(error);
+	getContent(name: string) {
+
+		const transformer = transformers[name];
+		if(!transformer)
+			return new Content<any>(this.http, name, null);
+		return new Content<typeof transformer>(this.http, name, transformer)
 	}
 
 }

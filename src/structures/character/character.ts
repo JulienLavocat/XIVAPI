@@ -1,7 +1,7 @@
 import { GearSet } from "./gearset";
 import { GrandCompany } from "../GrandCompany";
 import { ClassJob } from "./ClassJob";
-import { GuardianDeity } from "./GuardianDeity";
+import { GuardianDeity } from "../GuardianDeity";
 import { APIResource } from "../APIResource";
 
 export class Character {
