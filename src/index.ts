@@ -1,5 +1,6 @@
 import {XIVAPI} from "./ff14";
 import * as dotenv from "dotenv";
+import * as fs from "fs";
 dotenv.config();
 
 const api = new XIVAPI(process.env.FFIV_API_KEY + "");
@@ -11,13 +12,9 @@ async function start() {
 
 	try {
 
-		//const character = await api.character.get(CHARACTER_ID);
+		const character = await api.character.get(CHARACTER_ID);
+		fs.writeFileSync("./character.json", JSON.stringify(character, null, 4));
 		//console.log(character);
-		//console.log(await api.character.search("Piigo", {server: "Odin"}));
-
-		const addons = api.getContent("Addon");
-
-		console.log(await addons.list(10));
 
 	} catch (error) {
 		console.error(error);

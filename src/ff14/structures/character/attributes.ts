@@ -1,71 +1,65 @@
-export class Attributes {
+import { IIndexable } from "../iindexable";
 
-	//1 Strength
-	//2 Dexerity
-	//3 Vitality
-	//4 Inteligence
-	//5 Mind
-	//27 critical hit rate
-	//44 Determination
-	//22 direct hit rate
-	//21 Defense
-	//24 Magic defense
-	//20 Attack power
-	//19 Skill speed
-	//33 Attack magic potency
-	//34 Healing magic potency
-	//46 Spell speed
-	//45 Tenacity
-	//6 Piety
-	//7 HP
-	//8 MP
+const idToName = (id: number): string => {
 
-	strength: number; 				//1
-	dexterity: number; 				//2
-	vitality: number; 				//3
-	intelligence: number; 			//4
-	mind: number; 					//5
+	switch (id) {
+		case 1: return "strength";
+		case 2: return "dexerity";
+		case 3: return "vitality";
+		case 4: return "intelligence";
+		case 5: return "mind";
+		case 27: return "criticalHitRate";
+		case 44: return "determination";
+		case 22: return "directHitRate";
+		case 21: return "defense";
+		case 24: return "magicDefense";
+		case 20: return "attackPower";
+		case 45: return "skillSpeed";
+		case 33: return "attackMagicPotency";
+		case 34: return "healingMagicPotency";
+		case 46: return "spellSpeed";
+		case 19: return "tenacity";
+		case 6: return "piety";
+		case 7: return "hp";
+		case 8: return "mp";
+		default: return "unknownAttributeId";
+	}
 
-	criticalHitRate: number; 		//27
-	determination: number; 			//44
-	directHitRate: number; 			//22
+}
 
-	defense: number; 				//21
-	magicDefense: number;			//24
+export class Attributes implements IIndexable {
 
-	attackPower: number; 			//20
-	skillSpeed: number; 			//19
+	strength!: number;
+	dexterity!: number;
+	vitality!: number;
+	intelligence!: number;
+	mind!: number;
 
-	attackMagicPotency: number; 	//33
-	healingMagicPotency: number; 	//34
-	spellSpeed: number; 			//46
+	criticalHitRate!: number;
+	determination!: number;
+	directHitRate!: number;
 
-	tenacity: number;				//45
-	piety: number; 					//6
+	defense!: number;
+	magicDefense!: number;
 
-	hp: number; 					//7
-	mp: number; 					//8
+	attackPower!: number;
+	skillSpeed!: number;
+
+	attackMagicPotency!: number;
+	healingMagicPotency!: number;
+	spellSpeed!: number;
+
+	tenacity!: number;
+	piety!: number;
+
+	hp!: number;
+	mp!: number;
 
 	constructor(obj: any) {
-		this.strength 				= obj["1"];
-		this.dexterity 				= obj["2"];
-		this.vitality 				= obj["3"];
-		this.intelligence 			= obj["4"];
-		this.mind 					= obj["5"];
-		this.criticalHitRate 		= obj["27"];
-		this.determination 			= obj["44"];
-		this.directHitRate 			= obj["22"];
-		this.defense 				= obj["21"];
-		this.magicDefense 			= obj["24"];
-		this.attackPower 			= obj["20"];
-		this.skillSpeed 			= obj["19"];
-		this.attackMagicPotency 	= obj["33"];
-		this.healingMagicPotency 	= obj["34"];
-		this.spellSpeed 			= obj["46"];
-		this.tenacity 				= obj["45"];
-		this.piety 					= obj["6"];
-		this.hp 					= obj["7"];
-		this.mp 					= obj["8"];
+		obj.forEach((e: any) => {
+			const attributeName: string = idToName(e.Attribute.ID);
+			Object.assign(this, {[attributeName]: e.Value});
+		});
 	}
 
 }

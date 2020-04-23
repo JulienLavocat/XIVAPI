@@ -12,7 +12,7 @@ export class Characters {
 	}
 
 	async get(id: string | number): Promise<Character> {
-		return this.http.get("/character/" + id)
+		return this.http.get("/character/" + id + "?data=CJ&extended=true")
 			.then(r => this.toCharacter(r));
 	}
 

@@ -1,21 +1,22 @@
 import { Attributes } from "./attributes";
 import { Gears } from "./gears";
+import { ClassJobData } from "./ClassJobData";
 
 export class GearSet {
 
 	attributes: Attributes;
-	classId: string;
+	class: ClassJobData;
 	gear: Gears;
 	gearKey: string;
-	jobId: string;
+	job: ClassJobData;
 	level: string;
 
 	constructor(obj: any) {
 		this.attributes = new Attributes(obj.Attributes);
-		this.classId = obj["ClassID"];
-		this.gear = new Gears(obj["Gear"]);
-		this.gearKey = obj["GearKey"];
-		this.jobId = obj["JobID"];
-		this.level = obj["Level"];
+		this.class = new ClassJobData(obj.Class);
+		this.gear = new Gears(obj.Gear);
+		this.gearKey = obj.GearKey;
+		this.job = new ClassJobData(obj.Job);
+		this.level = obj.Level;
 	}
 }

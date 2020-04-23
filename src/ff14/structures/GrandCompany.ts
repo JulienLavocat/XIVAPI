@@ -1,11 +1,13 @@
+import { APIResource } from "./APIResource";
+
 export class GrandCompany {
 
-	rank: number;
-	name: number;
+	rank: APIResource;
+	company: APIResource;
 
 	constructor(obj: any) {
-		this.rank = obj["RankID"];
-		this.name = obj["NameID"];
+		this.rank = new APIResource(obj.Rank);
+		this.company = new APIResource(obj.Company);
 	}
 
 }
