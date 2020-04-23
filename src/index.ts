@@ -17,7 +17,6 @@ export class XIVAPI {
 	}
 
 	getContent(name: string) {
-
 		const transformer = transformers[name];
 		if(!transformer)
 			return new Content<any>(this.http, name, null);

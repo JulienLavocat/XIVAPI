@@ -1,11 +1,11 @@
 import { HTTPUtils } from "./http";
 import { SearchResults } from "../structures/searchResults";
-import { transformers } from "../structures/content/transformers";
 
 
 export class Content<T> {
 
 	name: string;
+	readonly hasTransformer: boolean;
 	private http: HTTPUtils;
 	private type: any;
 
@@ -13,6 +13,7 @@ export class Content<T> {
 		this.http = http;
 		this.name = name;
 		this.type = type;
+		this.hasTransformer = type !== null;
 	}
 
 	async list(limit = 100, ids: number[] = []) {
