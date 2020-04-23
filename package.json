@@ -1,6 +1,6 @@
 {
     "name": "@piigo/xivapi",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Object-oriented XIVAPI.com Client written in Typescript",
     "main": "dist/index.js",
     "type": "dist/index.d.ts",
@@ -10,8 +10,8 @@
         "lint": "tslint -p tsconfig.json",
         "prepare": "npm run build",
         "prepublishOnly": "npm test && npm run lint",
-        "preversion" : "npm run lint",
-        "postversion" : "git push && git push --tags"
+        "preversion": "npm run lint",
+        "postversion": "git push && git push --tags"
     },
     "repository": {},
     "keywords": [
