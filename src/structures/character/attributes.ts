@@ -1,5 +1,3 @@
-import { IIndexable } from "../iindexable";
-
 const idToName = (id: number): string => {
 
 	switch (id) {
@@ -27,7 +25,7 @@ const idToName = (id: number): string => {
 
 }
 
-export class Attributes implements IIndexable {
+export class Attributes {
 
 	strength!: number;
 	dexterity!: number;

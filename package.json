@@ -2,10 +2,27 @@
     "name": "@piigo/xivapi",
     "version": "0.0.1",
     "description": "Object-oriented XIVAPI.com Client written in Typescript",
-    "main": "src/index.js",
-    "scripts": {},
+    "main": "dist/index.js",
+    "type": "dist/index.d.ts",
+    "scripts": {
+        "test": "echo ",
+        "build": "tsc",
+        "lint": "tslint -p tsconfig.json",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm test && npm run lint",
+        "preversion" : "npm run lint",
+        "postversion" : "git push && git push --tags"
+    },
     "repository": {},
-    "keywords": [],
+    "keywords": [
+        "ff14",
+        "xivapi",
+        "final fantasy 14",
+        "final fantasy",
+        "final",
+        "fantasy",
+        "14"
+    ],
     "author": "Julien Lavocat",
     "license": "ISC",
     "dependencies": {
@@ -14,6 +31,9 @@
     "devDependencies": {
         "@types/node": "^13.13.1",
         "@types/node-fetch": "^2.5.6",
-        "dotenv": "^8.2.0"
+        "dotenv": "^8.2.0",
+        "tslint": "^6.1.1",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.8.3"
     }
 }

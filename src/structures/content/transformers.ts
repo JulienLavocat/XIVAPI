@@ -1,5 +1,5 @@
 import { Addon } from "./addon";
 
-export var transformers: any = {
-	Addon: Addon
+export const transformers: any = {
+	"Addon": Addon
 }

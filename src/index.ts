@@ -9,15 +9,14 @@ export class XIVAPI {
 
 	private http: HTTPUtils;
 
-	constructor(apiKey: string, serverUrl = "https://xivapi.com", language = "en") {
-		//TODO: Args validation for server and language
+	constructor(apiKey: string, language = "en", serverUrl = "https://xivapi.com") {
+		// TODO: Args validation for server and language
 		this.http = new HTTPUtils(apiKey, serverUrl, language);
 
 		this.character = new Characters(this.http);
 	}
 
 	getContent(name: string) {
-
 		const transformer = transformers[name];
 		if(!transformer)
 			return new Content<any>(this.http, name, null);

@@ -1,4 +1,4 @@
-import {XIVAPI} from ".";
+import {XIVAPI} from "../dist";
 import * as dotenv from "dotenv";
 dotenv.config();
 

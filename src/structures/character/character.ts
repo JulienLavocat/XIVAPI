@@ -18,11 +18,11 @@ export class Character {
 	guardianDeity: GuardianDeity;
 	id: number;
 	lang: string;
-	minions: any[]; //TODO MINIONS
+	minions: any[]; // TODO MINIONS
 	minionsCount: number;
 	minionsProgress: number;
 	minionsTotal: number;
-	mounts: any; //TODO MOUNTS
+	mounts: any; // TODO MOUNTS
 	mountsCount: number;
 	mountsProgress: number;
 	mountsTotal: number;
@@ -73,17 +73,17 @@ export class Character {
 		this.tribe = new APIResource(obj.Tribe);
 	}
 
-	async loadAchievements() {}
+	// async loadAchievements() {}
 
-	async loadMinionsAndMounts() {}
+	// async loadMinionsAndMounts() {}
 
-	async loadClassJobs() {}
+	// async loadClassJobs() {}
 
-	async loadFriends() {}
+	// async loadFriends() {}
 
-	async loadFreeCompany() {}
+	// async loadFreeCompany() {}
 
-	async loadFreeCompanyMembers() {}
+	// async loadFreeCompanyMembers() {}
 
-	async loadPvPTeam() {}
+	// async loadPvPTeam() {}
 }

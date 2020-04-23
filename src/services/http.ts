@@ -16,10 +16,10 @@ export class HTTPUtils {
 	}
 
 	async get(path: string): Promise<any> {
-		console.log(this.getBaseUrl(path));
+		// console.log(this.getBaseUrl(path));
 		const res = await fetch(this.getBaseUrl(path));
 
-		//TODO: Check for network error
+		// TODO: Check for network error
 
 		const json = await res.json();
 

@@ -7,7 +7,7 @@ export class GuardianDeity extends APIResource {
 
 	constructor(obj: any) {
 		super(obj);
-		this.guardianDeity = obj.GuardianDeity;	//TODO
+		this.guardianDeity = obj.GuardianDeity;	// TODO
 	}
 
 
