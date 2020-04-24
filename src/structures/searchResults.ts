@@ -20,17 +20,18 @@ export class SearchResults<T> {
 		this.updateObject(obj);
 	}
 
-	public next(): Promise<void> {
+	public next(): Promise<SearchResults<T>> {
 		return this.goTo(this.currentPage + 1);
 	}
 
-	public previous(): Promise<void> {
+	public previous(): Promise<SearchResults<T>> {
 		return this.goTo(this.currentPage - 1);
 	}
 
-	public async goTo(page: number): Promise<void> {
+	public async goTo(page: number): Promise<SearchResults<T>> {
 		const res = await this.http.get(this.path + "&page=" + page);
 		this.updateObject(res);
+		return this;
 	}
 
 	private updateObject(obj: any) {

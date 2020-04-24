@@ -1,4 +1,4 @@
-import {XIVAPI} from "../dist";
+import {XIVAPI} from "./index";
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -11,8 +11,17 @@ async function start() {
 
 	try {
 
-		const character = await api.character.get(CHARACTER_ID);
-		console.log(character);
+		const addon = api.getContent("Addon");
+
+		const results = await addon.list(1);
+
+		console.log(results);
+
+		console.log(await results.next());
+
+		console.log(await results.goTo(10));
+
+		console.log(await results.previous());
 
 	} catch (error) {
 		console.error(error);

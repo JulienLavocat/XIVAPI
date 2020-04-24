@@ -1,5 +1,5 @@
 import { HTTPUtils } from "./http";
-import { SearchResults } from "../structures/searchResults";
+import { SearchResults } from "../structures/SearchResults";
 
 
 export class Content<T> {

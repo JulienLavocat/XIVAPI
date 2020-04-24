@@ -1,6 +1,6 @@
 import { HTTPUtils } from "./http";
 import { Character } from "../structures/character/character";
-import { SearchResults } from "../structures/searchResults";
+import { SearchResults } from "../structures/SearchResults";
 import { CharacterSearch } from "../structures/character/characterSearch";
 
 export class Characters {
