@@ -23,4 +23,12 @@ export class XIVAPI {
 		return new Content<typeof transformer>(this.http, name, transformer)
 	}
 
+	async listServers(): Promise<string[]> {
+		const res = (await this.http.get("/servers")) as string[];
+		return res;
+	}
+	listServersPerDC(): Promise<any> {
+		return this.http.get("/servers/dc");
+	}
+
 }

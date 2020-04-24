@@ -16,7 +16,7 @@ export class HTTPUtils {
 	}
 
 	async get(path: string): Promise<any> {
-		// console.log(this.getBaseUrl(path));
+		console.log(this.getBaseUrl(path));
 		const res = await fetch(this.getBaseUrl(path));
 
 		// TODO: Check for network error
@@ -31,8 +31,8 @@ export class HTTPUtils {
 
 	private getBaseUrl(path: string) {
 
-		if(path === "")
-			path = "?";
+		if(!path.includes("?"))
+			path = path + "?";
 
 		return `${this.serverUrl}${path}&apiKey=${this.apiKey}&language=${this.language}`;
 	}
